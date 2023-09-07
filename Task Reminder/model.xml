@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="simpleReminder">
+				<feature mandatory="true" name="Base"/>
+				<or mandatory="true" name="UI">
+					<feature mandatory="true" name="SimpleGUI"/>
+					<feature mandatory="true" name="Shell"/>
+				</or>
+				<and mandatory="true" name="Persistence">
+					<alt mandatory="true" name="SaveType">
+						<feature mandatory="true" name="Binary"/>
+						<feature mandatory="true" name="Textfile"/>
+					</alt>
+					<feature name="Cache"/>
+				</and>
+				<and name="Dates">
+					<alt mandatory="true" name="DateFormat">
+						<feature mandatory="true" name="German"/>
+						<feature mandatory="true" name="EnglishSlash"/>
+						<feature mandatory="true" name="EnglishDot"/>
+					</alt>
+					<or name="Reminder">
+						<feature mandatory="true" name="Sound"/>
+						<feature mandatory="true" name="Visual"/>
+					</or>
+				</and>
+				<feature name="Favorites"/>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
